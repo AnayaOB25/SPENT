@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPENT | Student Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Main application layout-->
+     <div class="app-container">
+
+        <!-- sidebar navigation-->
+         <aside class="sidebar">
+
+            <div class="logo">
+                <h2>SPENT</h2>
+            </div>
+
+            <nav class="navigation">
+                <a href="dashboard" class="nav-link active">
+                    Dashboard
+                </a>
+
+                <a href="add-expense" class="nav-link">
+                    Add Expense
+                </a>
+
+                <a href="spending" class="nav-link">
+                    Spending
+                </a>
+
+                <a href="savings" class="nav-link">
+                    Savings
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>SPENT</p>
+                <p>Student Finance Tracker</p>
+            </div>
+
+         </aside>
+
+         <!--Main dashboard content-->
+         <main class="main-content" id="dashboard">
+
+            <!--Top header-->
+            <header class="top-header">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Here's an overview of your finances.</p>
+                </div>
+
+                <div class="user-profile">
+                    <span class="user-avatar">U</span>
+                    <span>User</span>
+                </div>
+            </header>
+
+            <!--Welcome section-->
+            <section class="welcome-section">
+                <h2>Welcome to SPENT</h2>
+                <p>Let's get your finances organized.</p>
+            </section>
+
+
+            <!--Financial summary cards-->
+            <section class="summary-cards">
+
+                <article class="summary-card">
+                    <p>Monthly Income</p>
+                    <h2 id="monthly-income">$0.00</h2>
+                    <span>Your income this month</span>
+                </article>
+
+                <article class="summary-card">
+                    <p>Total Spent</p>
+                    <h2 id="total-spent">$0.00</h2>
+                    <span>Your expenses this month</span>
+                </article>
+
+                <article class="summary-card">
+                    <p>Remaining Budget</p>
+                    <h2 id="remaining-budget">$0.00</h2>
+                    <span>Money left this month</span>
+                </article>
+
+            </section>
+
+            <!--Spending overview-->
+            <section class="dashboard-grid">
+
+                <article class="dashboard-card spending-overview">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Spending Overview</h2>
+                            <p>See where your money goes.</p>
+                        </div>
+
+                        <select id="spending-period" aria-label="Spending period">
+                            <option value="month"> This Month</option>
+                            <option value="week">This Week</option>
+                        </select>
+                    </div>
+
+                    <div id="spending-chart" class="chart-placeholder">
+                        <p>Your spending chart will appear here.</p>
+                    </div>
+                </article>
+
+                <!--Budget progress-->
+                <article class="dashboard-card budget-overview">
+                    <h2>Budget Progress</h2>
+                    <p>Keep track of your spending limits.</p>
+
+                    <div class="budget-progress-item">
+                        <div class="progress-label">
+                            <span>Food</span>
+                            <span>No budget set</span>
+                        </div>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="budget-progress-item">
+                        <div class="progress-label">
+                            <span>Transportation</span>
+                            <span>No budget set</span>
+                        </div>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="budget-progress-item">
+                        <div class="progress-label">
+                            <span>Entertainment</span>
+                            <span>No budget set</span>
+                        </div>
+
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!--Recent expenses-->
+            <section class="dashboard-card recent-expenses">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Recent Expenses</h2>
+                        <p>Keep an eye on your latest purchases</p>
+                    </div>
+
+                    <a href="#spending" class="text-link">View All</a>
+                </div>
+
+                <div class="expense-table-wrapper">
+                    <table class="expense-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Expense</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Amount</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="expense-list">
+                            <tr>
+                                <td colspan="4" class="empty-state">
+                                    No expenses yet. Add your first expense!
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <a href="#add-expense" class="primary-button">
+                    + Add Expense
+                </a>
+
+            </section>
+
+         </main>
+     </div>
+
+     <script src="script.js"></script>
+
+</body>
+</html>
